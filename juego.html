@@ -62,7 +62,23 @@
 
     function guardarLetrasmalas(letra){
         
+        // Validar limite
+        if(letrasMalas.length > 8){
+            alert("Has perdido!!");
+            return;
+        }
+
+        // Validar que no se repitan las letras malas
+        for(let i = 0; i < letrasMalas.length; i++){
+            if(letrasMalas[i] == letra){
+                return;
+            } 
+        }
+        
+        // Sumar letras malas
         letrasMalas += letra;
+
+        // Creando divs de letras malas
         var elementoLetraMala = document.getElementById("letrasMalas");
         elementoLetraMala.innerHTML = `<div class="letrasMalas">${letrasMalas}</div>`;
 
