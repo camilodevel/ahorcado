@@ -1,0 +1,53 @@
+.ingresarPalabraContainer{
+    width: 700px;
+    margin: auto;
+}
+
+.palabraContainer{
+    height: 300px;
+}
+
+.texto{
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+    color: #0A3871;
+    font-size: 32px;
+}
+
+.texto::placeholder{
+    color: #0A3871;
+}
+
+.botonesCrearContainer{
+    flex-flow: wrap;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reglas{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.linkCrear{
+    width: 48%;
+}
+
+.btnsCrear{
+    width: 100%;
+    padding: 20px;
+}
+
+.btnGuardar{
+    background: #0A3871;
+    color: white;
+}
+
+.btnCancelar{
+    background: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #0A3871;
+}

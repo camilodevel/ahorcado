@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/juego.css">
+    <title>Document</title>
+</head>
+
+    <body>
+        <div class="logoContainer">
+            <div class="logo"></div>
+        </div>
+        <div class="juegoContainer">
+            <div class="ahorcadoContainer">
+
+            </div>
+            <div class="letrasContainer">
+                <div id="letrasAhorcado" class="letrasAhorcado">
+
+                </div>
+                <div id="espacioAbajo" class="espacioAbajo">
+
+                </div>
+                <div id="letrasMalas" class="letrasMalas">
+
+                </div>
+            </div>
+            <div class="btnsJuegoOpciones">
+                <a href="crear.html"><button class="btn btnNuevoJuego">Nuevo juego</button></a>
+                <button class="btn btnDesistir">Desistir</button>
+            </div>
+        </div>    
+    </body>
+
+</html>
+
+<script>
+
+    // Variables globales.
+    var texto = localStorage.getItem('texto');
+    var letrasMalas = "";
+
+    // Creacion de los inputs que reciben letras usando la variable guardada en el localStorage.
+    function letras(texto){
+        var elementoLetras = document.getElementById("letrasAhorcado");
+        for(let i = 0; i < texto.length; i++){
+            elementoLetras.innerHTML += `<input id="letra${i}" onkeypress="ingresarLetra(event)" type="text" class="inputLetra">`;
+        }
+    }
+
+    // Creando las barras inferiores esoaciadas.
+    function espacios(){
+        var elementoEspacio = document.getElementById("espacioAbajo");
+        for(let i = 0; i < texto.length; i++){
+            elementoEspacio.innerHTML += `<div class="lineaAbajo"></div>`;
+        }
+    }
+
+    function guardarLetrasmalas(letra){
+        
+        letrasMalas += letra;
+        var elementoLetraMala = document.getElementById("letrasMalas");
+        elementoLetraMala.innerHTML = `<div class="letrasMalas">${letrasMalas}</div>`;
+
+    }
+
+    // Comparando las letras ingresadas con las de la variable.
+    function ingresarLetra(e){
+        
+        var letraPresionada = e.key;
+        var idInput = e.path[0].id;
+        var obtenerLetra = idInput.slice(5);
+        var obtenerPosicion = parseInt(obtenerLetra);
+
+        for(let i = 0; i < texto.length; i++){
+
+            if(obtenerPosicion == i && letraPresionada != texto[i]){
+                var inputLetra = document.getElementById("letra"+i);
+                inputLetra.value = inputLetra.value.substring(0, inputLetra.value.length - 1);
+                guardarLetrasmalas(letraPresionada);
+            }
+
+            if(obtenerPosicion == i && letraPresionada == texto[i]){
+                console.log("Esta es tu letra "+ letraPresionada + " y esta era LA letra "+texto[i]);
+            }
+
+        }
+
+    }
+
+    espacios();
+    letras(texto);
+
+</script>

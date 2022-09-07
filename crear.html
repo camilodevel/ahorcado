@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/crear.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="logoContainer">
+        <div class="logo"></div>
+    </div>
+    <div class="ingresarPalabraContainer">
+        <div class="palabraContainer">
+            <input id="texto" type="text" class="texto" placeholder="Ingrese una palabra">
+        </div>
+        
+        <div class="botonesCrearContainer">
+            <p class="reglas">Max. de 8 letras</p>
+            <a class="linkCrear" 
+                
+                ><button onclick="guardarEmpezar()" class="btn btnsCrear btnGuardar">Guardar y empezar</button></a>
+            <a class="linkCrear" href="index.html"><button class="btn btnsCrear btnCancelar">Cancelar</button></a>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function guardarEmpezar(){
+        var texto = document.getElementById("texto").value;
+        if(!texto){
+            return;
+        }
+        if(texto == texto.toLowerCase()){
+            alert("El texto debe estar en mayusculas");
+            return;
+        }
+        if(texto.length > 8){
+            alert("No puedes poner mas de 8 letras");
+            return;
+        }
+        localStorage.setItem('texto', texto);
+        location.href="juego.html";
+    }
+
+</script>

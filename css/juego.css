@@ -1,0 +1,78 @@
+.juegoContainer{
+    width: 600px;
+    margin: auto;
+}
+
+.ahorcadoContainer{
+    height: 200px;
+}
+
+.letrasContainer{
+    margin-bottom: 50px;
+}
+
+.letrasAhorcado{
+    display: flex;
+    justify-content: space-around;
+    height: 30px;
+}
+
+.inputLetra{
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+    color: #0A3871;
+    font-size: 32px;
+    width: 40px;
+}
+
+.espacioAbajo{
+    display: flex;
+    justify-content: space-around;
+    height: 30px;
+}
+
+.lineaAbajo{
+    width: 80px;
+    margin: 0 5px;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-bottom-color: #0A3871;
+}
+
+.letrasMalas{
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 24px;
+    color: #495057;
+    letter-spacing: 10px;
+}
+
+.btnsJuegoOpciones{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnsJuegoOpciones a{
+    width: 48%;
+}
+
+.btnNuevoJuego{
+    padding: 20px;
+    width: 100%;
+
+    background: #0A3871;
+    color: white;
+}
+
+.btnDesistir{  
+    padding: 20px; 
+    width: 48%;
+
+    background: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #0A3871;
+}
