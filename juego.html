@@ -43,6 +43,8 @@
     // Variables globales.
     var texto = localStorage.getItem('texto');
     var letrasMalas = "";
+    var victoria = false;
+    var contarBuenas = 0;
 
     // Creacion de los inputs que reciben letras usando la variable guardada en el localStorage.
     function letras(texto){
@@ -84,6 +86,17 @@
 
     }
 
+    // Funcion para validar si todas son correctas
+    function validarVictoria(buena){
+
+        contarBuenas += buena;
+
+        if(contarBuenas == texto.length){
+            alert("Gano!!");
+        }
+
+    } 
+
     // Comparando las letras ingresadas con las de la variable.
     function ingresarLetra(e){
         
@@ -101,7 +114,8 @@
             }
 
             if(obtenerPosicion == i && letraPresionada == texto[i]){
-                console.log("Esta es tu letra "+ letraPresionada + " y esta era LA letra "+texto[i]);
+                // console.log("Esta es tu letra "+ letraPresionada + " y esta era LA letra "+texto[i]);
+                validarVictoria(1);
             }
 
         }
