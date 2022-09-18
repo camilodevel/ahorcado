@@ -37,9 +37,17 @@
 
     function guardarEmpezar(){
         var texto = document.getElementById("texto").value;
+        // Validacion de espacio
+        var noValidoEspacio = /\s/;
         if(!texto){
+            alert("Debes ingresar una palabra para jugar!");
             return;
         }
+        if(noValidoEspacio.test(texto)){
+            alert("No se aceptan espacios");
+            return;
+        }
+
         if(texto == texto.toLowerCase()){
             alert("El texto debe estar en mayusculas");
             return;
