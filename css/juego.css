@@ -4,11 +4,71 @@
 }
 
 .ahorcadoContainer{
-    height: 200px;
+    height: 366px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.img1{
+    position: absolute;
+    bottom: 5px;
+    left: 150px;
+}
+
+.img2{
+    left: 220px;
+    right: 5px;
+    position: absolute;
+}
+
+.img3{
+    position: absolute;
+    left: 220px;
+}
+
+.img4{
+    position: absolute;
+    left: 396px;
+}
+
+.img5{
+    position: absolute;
+    left: 367px;
+    top: 45px;
+}
+
+.img6{
+    position: absolute;
+    left: 396px;
+    top: 106px;
+}
+
+.img7{
+    position: absolute;
+    left: 361px;
+    top: 107px;
+}
+
+.img8{
+    position: absolute;
+    left: 398px;
+    top: 107px;
+}
+
+.img9{
+    position: absolute;
+    left: 362px;
+    top: 238px;
+}
+
+.img10{
+    position: absolute;
+    left: 397px;
+    top: 238px;
 }
 
 .letrasContainer{
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 
 .letrasAhorcado{

@@ -16,7 +16,16 @@
         </div>
         <div class="juegoContainer">
             <div class="ahorcadoContainer">
-
+                <img class="img1" src="img/1.png" alt="">
+                <img class="img2" src="img/2.png" alt="">
+                <img class="img3" src="img/3.png" alt="">
+                <img class="img4" src="img/4.png" alt="">
+                <img class="img5" src="img/5.png" alt="">
+                <img class="img6" src="img/6.png" alt="">
+                <img class="img7" src="img/7.png" alt="">
+                <img class="img8" src="img/8.png" alt="">
+                <img class="img9" src="img/9.png" alt="">
+                <img class="img10" src="img/10.png" alt="">
             </div>
             <div class="letrasContainer">
                 <div id="letrasAhorcado" class="letrasAhorcado">
@@ -79,11 +88,17 @@
         
         // Sumar letras malas
         letrasMalas += letra;
+        // Creando muñeco
+        munecoAhorcado();
 
         // Creando divs de letras malas
         var elementoLetraMala = document.getElementById("letrasMalas");
         elementoLetraMala.innerHTML = `<div class="letrasMalas">${letrasMalas}</div>`;
 
+    }
+    
+    function munecoAhorcado(){
+        console.log("MALA!");
     }
 
     // Funcion para validar si todas son correctas
