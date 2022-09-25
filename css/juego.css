@@ -10,58 +10,68 @@
 }
 
 .img1{
+    visibility: visible;
     position: absolute;
     bottom: 5px;
     left: 150px;
 }
 
 .img2{
+    visibility: visible;
     left: 220px;
     right: 5px;
     position: absolute;
 }
 
 .img3{
+    visibility: hidden;
     position: absolute;
     left: 220px;
 }
 
 .img4{
+    visibility: hidden;
     position: absolute;
     left: 396px;
 }
 
 .img5{
+    visibility: hidden;
     position: absolute;
     left: 367px;
     top: 45px;
 }
 
 .img6{
+    visibility: hidden;
     position: absolute;
     left: 396px;
     top: 106px;
 }
 
 .img7{
+    visibility: hidden;
     position: absolute;
     left: 361px;
     top: 107px;
 }
 
 .img8{
+    visibility: hidden;
     position: absolute;
     left: 398px;
     top: 107px;
 }
 
 .img9{
+    visibility: hidden;
     position: absolute;
     left: 362px;
     top: 238px;
 }
 
 .img10{
+    visibility: hidden;
     position: absolute;
     left: 397px;
     top: 238px;
@@ -112,6 +122,7 @@
 
 .btnsJuegoOpciones{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -135,4 +146,13 @@
     border-width: 1px;
     border-style: solid;
     border-color: #0A3871;
+}
+
+@media (max-width: 780px) {
+    
+    .btnsJuegoOpciones a, .btnDesistir{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
 }

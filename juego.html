@@ -16,16 +16,16 @@
         </div>
         <div class="juegoContainer">
             <div class="ahorcadoContainer">
-                <img class="img1" src="img/1.png" alt="">
-                <img class="img2" src="img/2.png" alt="">
-                <img class="img3" src="img/3.png" alt="">
-                <img class="img4" src="img/4.png" alt="">
-                <img class="img5" src="img/5.png" alt="">
-                <img class="img6" src="img/6.png" alt="">
-                <img class="img7" src="img/7.png" alt="">
-                <img class="img8" src="img/8.png" alt="">
-                <img class="img9" src="img/9.png" alt="">
-                <img class="img10" src="img/10.png" alt="">
+                <img class="img1" id="img1" src="img/1.png" alt="">
+                <img class="img2" id="img2" src="img/2.png" alt="">
+                <img class="img3" id="img3" src="img/3.png" alt="">
+                <img class="img4" id="img4" src="img/4.png" alt="">
+                <img class="img5" id="img5" src="img/5.png" alt="">
+                <img class="img6" id="img6" src="img/6.png" alt="">
+                <img class="img7" id="img7" src="img/7.png" alt="">
+                <img class="img8" id="img8" src="img/8.png" alt="">
+                <img class="img9" id="img9" src="img/9.png" alt="">
+                <img class="img10" id="img10" src="img/10.png" alt="">
             </div>
             <div class="letrasContainer">
                 <div id="letrasAhorcado" class="letrasAhorcado">
@@ -52,8 +52,21 @@
     // Variables globales.
     var texto = localStorage.getItem('texto');
     var letrasMalas = "";
+    var contadorMalas = 0;
     var victoria = false;
     var contarBuenas = 0;
+
+    // Obteniendo las clases del muñeco
+    let img1 = document.getElementById('img1');
+    let img2 = document.getElementById('img2');
+    let img3 = document.getElementById('img3');
+    let img4 = document.getElementById('img4');
+    let img5 = document.getElementById('img5');
+    let img6 = document.getElementById('img6');
+    let img7 = document.getElementById('img7');
+    let img8 = document.getElementById('img8');
+    let img9 = document.getElementById('img9');
+    let img10 = document.getElementById('img10');
 
     // Creacion de los inputs que reciben letras usando la variable guardada en el localStorage.
     function letras(texto){
@@ -74,7 +87,7 @@
     function guardarLetrasmalas(letra){
         
         // Validar limite
-        if(letrasMalas.length > 8){
+        if(letrasMalas.length >= 8){
             alert("Has perdido!!");
             return;
         }
@@ -88,6 +101,7 @@
         
         // Sumar letras malas
         letrasMalas += letra;
+        contadorMalas += 1;
         // Creando muñeco
         munecoAhorcado();
 
@@ -98,7 +112,41 @@
     }
     
     function munecoAhorcado(){
-        console.log("MALA!");
+        if( contadorMalas == 1 ){
+            img3.style.visibility = "visible";
+        }
+        if( contadorMalas == 2 ){
+            img4.style.visibility = "visible";
+        }
+        if( contadorMalas == 3 ){
+            img5.style.visibility = "visible";
+        }
+        if( contadorMalas == 4 ){
+            img6.style.visibility = "visible";
+        }
+        if( contadorMalas == 5 ){
+            img7.style.visibility = "visible";
+        }
+        if( contadorMalas == 6 ){
+            img8.style.visibility = "visible";
+        }
+        if( contadorMalas == 7 ){
+            img9.style.visibility = "visible";
+        }
+        if( contadorMalas == 8 ){
+            img10.style.visibility = "visible";
+        }
+    }
+
+    function reiniciarMuneco(){
+        img3.style.visibility = "hidden";
+        img4.style.visibility = "hidden";
+        img5.style.visibility = "hidden";
+        img6.style.visibility = "hidden";
+        img7.style.visibility = "hidden";
+        img8.style.visibility = "hidden";
+        img9.style.visibility = "hidden";
+        img10.style.visibility = "hidden";
     }
 
     // Funcion para validar si todas son correctas
@@ -159,6 +207,8 @@
         console.log(elementoLetraMala);
         letrasMalas = "";
         contarBuenas = 0;
+        contadorMalas = 0;
+        reiniciarMuneco();
     }
 
     espacios();
